@@ -5,17 +5,17 @@ export default {};
 export const Default = () => {
   return (
     <div>
-      <Tile state="correct">t</Tile>
+      <Tile variant="correct">t</Tile>
       <Tile>e</Tile>
-      <Tile state="present">s</Tile>
-      <Tile state="absent">t</Tile>
+      <Tile variant="present">s</Tile>
+      <Tile variant="absent">t</Tile>
       <Tile />
     </div>
   );
 };
 
 export const Correct = () => {
-  return <Tile state="correct">w</Tile>;
+  return <Tile variant="correct">w</Tile>;
 };
 
 export const Empty = () => {
@@ -23,13 +23,13 @@ export const Empty = () => {
 };
 
 export const Present = () => {
-  return <Tile state="present">w</Tile>;
+  return <Tile variant="present">w</Tile>;
 };
 
 export const Absent = () => {
-  return <Tile state="absent">w</Tile>;
+  return <Tile variant="absent">w</Tile>;
 };
 
 export const Undisclosed = () => {
-  return <Tile state="undisclosed">w</Tile>;
+  return <Tile variant="undisclosed">w</Tile>;
 };

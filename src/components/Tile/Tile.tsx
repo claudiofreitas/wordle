@@ -1,12 +1,12 @@
 import { CSSProperties, FC } from 'react';
 
-type TileState = 'correct' | 'present' | 'absent' | 'empty' | 'undisclosed';
+type TileVariant = 'correct' | 'present' | 'absent' | 'empty' | 'undisclosed';
 
 interface Props {
-  state?: TileState;
+  variant?: TileVariant;
 }
 
-const Tile: FC<Props> = ({ children, state = 'empty' }) => {
+const Tile: FC<Props> = ({ children, variant = 'empty' }) => {
   const baseStyle: CSSProperties = {
     // Layouts
     display: 'inline-flex',
@@ -28,7 +28,7 @@ const Tile: FC<Props> = ({ children, state = 'empty' }) => {
     borderColor: 'transparent',
   };
 
-  const styleByState: Record<TileState, CSSProperties> = {
+  const styleByVariant: Record<TileVariant, CSSProperties> = {
     correct: {
       color: '#ffffff',
       backgroundColor: '#6aaa64',
@@ -55,7 +55,7 @@ const Tile: FC<Props> = ({ children, state = 'empty' }) => {
     <div
       style={{
         ...baseStyle,
-        ...styleByState[state],
+        ...styleByVariant[variant],
       }}
     >
       {children}
