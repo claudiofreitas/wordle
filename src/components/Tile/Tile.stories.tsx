@@ -8,7 +8,7 @@ export default StoryConfig;
 
 export const Default = () => {
   return (
-    <div>
+    <div style={{ display: 'flex' }}>
       <Tile variant="correct">t</Tile>
       <Tile>e</Tile>
       <Tile variant="present">s</Tile>
