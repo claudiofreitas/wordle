@@ -43,10 +43,12 @@ const Tile: FC<Props> = ({ children, variant = 'empty' }) => {
     },
     empty: {
       color: '#000000',
+      backgroundColor: '#ffffff',
       borderColor: '#d3d6da',
     },
     undisclosed: {
       color: '#000000',
+      backgroundColor: '#ffffff',
       borderColor: '#000000',
     },
   };
