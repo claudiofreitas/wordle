@@ -18,12 +18,16 @@ export const Default = () => {
   );
 };
 
-export const Correct = () => {
-  return <Tile variant="correct">w</Tile>;
+export const Empty = () => {
+  return <Tile />;
 };
 
-export const Empty = () => {
-  return <Tile>w</Tile>;
+export const Undisclosed = () => {
+  return <Tile variant="undisclosed">w</Tile>;
+};
+
+export const Correct = () => {
+  return <Tile variant="correct">w</Tile>;
 };
 
 export const Present = () => {
@@ -32,8 +36,4 @@ export const Present = () => {
 
 export const Absent = () => {
   return <Tile variant="absent">w</Tile>;
-};
-
-export const Undisclosed = () => {
-  return <Tile variant="undisclosed">w</Tile>;
 };
