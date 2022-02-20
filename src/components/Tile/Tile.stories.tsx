@@ -1,6 +1,10 @@
 import Tile from './Tile';
+import { ComponentMeta } from '@storybook/react';
 
-export default {};
+const StoryConfig: ComponentMeta<typeof Tile> = {
+  component: Tile,
+};
+export default StoryConfig;
 
 export const Default = () => {
   return (
