@@ -26,6 +26,9 @@ const Tile: FC<Props> = ({ children, variant = 'empty' }) => {
     borderWidth: 2,
     borderStyle: 'solid',
     borderColor: 'transparent',
+
+    // Other
+    userSelect: 'none',
   };
 
   const styleByVariant: Record<TileVariant, CSSProperties> = {
