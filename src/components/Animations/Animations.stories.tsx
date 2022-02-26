@@ -50,3 +50,20 @@ export const FlipIn = () => {
     </>
   );
 };
+
+export const FlipOut = () => {
+  const [addClass, toggleAddClass] = useToggle(false);
+  const animationClass = classNames({ 'animation-flip-out': addClass });
+
+  return (
+    <>
+      <button onClick={toggleAddClass}>Toggle</button>
+      Animation class: {addClass ? 'on' : 'off'}
+      <br />
+      <br />
+      <Animations>
+        <Tile className={animationClass}>w</Tile>
+      </Animations>
+    </>
+  );
+};

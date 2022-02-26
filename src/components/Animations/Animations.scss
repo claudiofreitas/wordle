@@ -30,4 +30,19 @@
     animation-duration: 250ms;
     animation-timing-function: ease-in;
   }
+
+  @keyframes FlipOut {
+    0% {
+      transform: rotateX(-90deg);
+    }
+    100% {
+      transform: rotateX(0);
+    }
+  }
+
+  .animation-flip-out {
+    animation-name: FlipOut;
+    animation-duration: 250ms;
+    animation-timing-function: ease-in;
+  }
 }
