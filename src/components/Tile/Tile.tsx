@@ -1,12 +1,15 @@
-import { CSSProperties, FC } from 'react';
+import { ComponentPropsWithoutRef, CSSProperties, FC } from 'react';
+import classNames from 'classnames';
 
 type TileVariant = 'correct' | 'present' | 'absent' | 'empty' | 'undisclosed';
 
-interface Props {
+interface Props extends ComponentPropsWithoutRef<'div'> {
   variant?: TileVariant;
 }
 
-const Tile: FC<Props> = ({ children, variant = 'empty' }) => {
+const Tile: FC<Props> = ({ children, className, variant = 'empty' }) => {
+  const mixedClassNames = classNames('wordle-tile', className);
+
   const baseStyle: CSSProperties = {
     // Layouts
     display: 'inline-flex',
@@ -58,6 +61,7 @@ const Tile: FC<Props> = ({ children, variant = 'empty' }) => {
 
   return (
     <div
+      className={mixedClassNames}
       style={{
         ...baseStyle,
         ...styleByVariant[variant],
