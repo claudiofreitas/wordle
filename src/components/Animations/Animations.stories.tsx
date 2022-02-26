@@ -3,6 +3,7 @@ import { ComponentMeta } from '@storybook/react';
 import Tile from '../Tile/Tile';
 import { useToggle } from 'react-use';
 import classNames from 'classnames';
+import { useEffect } from 'react';
 
 const StoryConfig: ComponentMeta<typeof Animations> = {
   component: Animations,
@@ -18,8 +19,18 @@ export const Default = () => {
 };
 
 export const PopIn = () => {
+  const animationName = 'animation-pop-in';
+  const animationDurationInMs = 100;
+
   const [addClass, toggleAddClass] = useToggle(false);
-  const animationClass = classNames({ 'animation-pop-in': addClass });
+  useEffect(() => {
+    if (addClass) {
+      setTimeout(() => {
+        toggleAddClass(false);
+      }, animationDurationInMs);
+    }
+  }, [addClass, toggleAddClass]);
+  const animationClass = classNames({ [animationName]: addClass });
 
   return (
     <>
@@ -35,8 +46,18 @@ export const PopIn = () => {
 };
 
 export const FlipIn = () => {
+  const animationName = 'animation-flip-in';
+  const animationDurationInMs = 250;
+
   const [addClass, toggleAddClass] = useToggle(false);
-  const animationClass = classNames({ 'animation-flip-in': addClass });
+  useEffect(() => {
+    if (addClass) {
+      setTimeout(() => {
+        toggleAddClass(false);
+      }, animationDurationInMs);
+    }
+  }, [addClass, toggleAddClass]);
+  const animationClass = classNames({ [animationName]: addClass });
 
   return (
     <>
@@ -52,8 +73,18 @@ export const FlipIn = () => {
 };
 
 export const FlipOut = () => {
+  const animationName = 'animation-flip-out';
+  const animationDurationInMs = 250;
+
   const [addClass, toggleAddClass] = useToggle(false);
-  const animationClass = classNames({ 'animation-flip-out': addClass });
+  useEffect(() => {
+    if (addClass) {
+      setTimeout(() => {
+        toggleAddClass(false);
+      }, animationDurationInMs);
+    }
+  }, [addClass, toggleAddClass]);
+  const animationClass = classNames({ [animationName]: addClass });
 
   return (
     <>
